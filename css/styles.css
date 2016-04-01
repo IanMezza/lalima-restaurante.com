@@ -1,0 +1,47 @@
+.navbar-default.lima{
+	background-color: white;
+	padding-top: 15px;
+}
+.thmb{
+	max-width: 60px!important;
+	margin: 0px auto;
+	margin-bottom: 12px;
+	border: 2px solid #fff;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+	border-radius: 80px;
+}
+.thmb-item{
+	width: 85px;
+	text-align: center;
+}
+.navbar-nav>li>a.menu-link {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.navbar-brand{
+	font-size: 50px;
+    padding: 10px 0px;
+}
+.navbar-brand > span{
+	font-size: initial;
+}
+.navbar-brand > img{
+	max-width: 100px;
+}
+.lima-brand{
+	color: #777;
+    font-size: 50px;
+    padding-left: 20px;
+    bottom: -20px;
+}
+.lima-brand > p{
+	font-size: 26px;
+	bottom: -26px;
+	position: relative;
+}
