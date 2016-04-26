@@ -30,6 +30,7 @@
 		
 		<!-- Favicon -->
 		<link href="/img/favicon.gif" rel="shortcut icon" type="image/x-icon">
+		{{function('wp_head')}}
 	</head>
 	
 	<body>	
@@ -586,21 +587,23 @@
 			
 				<!-- Showcase Start -->
 				
-				{# <div class="showcase">
+				<div class="showcase">
 					<div class="container">
 						<div class="row">
+							{% for promo in promoEvents %}
 							<div class="col-md-6 col-sm-6">
-								<!-- Showcase section item -->
-								<div class="showcase-item">
-									<!-- Image -->
-									<img class="img-responsive" src="img/fruit2.png" alt="" />
-									<!-- Heading -->
-									<h3><a href="#">DESAYUNO</a></h3>
-									<!-- Paragraph -->
-									<p>Comienza bien tu día. Acompaña tu bufet con unos tradicionales chilaquiles</p>
-									<div class="clearfix"></div>
+								<div class="row special-date">
+									<div class="col-xs-12 col-sm-6">
+										<img class="img-responsive img-thumbnail" src="{{ promo.get_thumbnail.src }}" alt="" />
+									</div>
+									<div class="col-xs-12 col-sm-6">
+										<h3>{{ promo.title }}</h3>
+										<p>{{ promo.post_content|excerpt(15)|shortcodes }}</p>
+									</div>
 								</div>
-							</div>
+							</div>    
+							{% endfor %}
+							
 							<div class="col-md-6 col-sm-6">
 								<!-- Showcase section item -->
 								<div class="showcase-item">
@@ -615,7 +618,7 @@
 							</div>
 						</div>
 					</div>
-				</div> #}
+				</div>
 				
 				<!-- Showcase End -->
 
@@ -654,7 +657,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Sopa tlaxcalteca</a> 
+													<i class="fa fa-angle-right"></i> <a href="#">Caldo de pollo</a> 
 													<!-- Price badge -->
 													{# <span class="pull-right">Incluído</span> #}
 													<div class="clearfix"></div>
@@ -663,7 +666,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Crema de zanahoria</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Crema de champiñón</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$</span> #}
 													<div class="clearfix"></div>
@@ -672,7 +675,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Salchichas con chipotle</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Tallarín clásico</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -681,7 +684,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Tallarín con jamón a la crema</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Papas al horno</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$</span> #}
 													<div class="clearfix"></div>
@@ -690,16 +693,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Papas con chorizo</a>
-													<!-- Price badge -->
-													{# <span class="pull-right">$9</span> #}
-													<div class="clearfix"></div>
-												</div>
-											</li>
-											<li>
-												<div class="menu-list-item">
-													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Longaniza en salsa verde</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Arroz poblano</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -725,7 +719,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Costilla encacahuatada</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Costilla en salsa ranchera</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -734,7 +728,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Ensalada</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Pechuga en crema de cilantro y calabacita</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -743,7 +737,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Pollo en crema calabacita y cilantro</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Pescado al mojo de ajo</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -752,7 +746,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Chilaquiles verdes o rojos</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Agua de fresa</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$</span> #}
 													<div class="clearfix"></div>
@@ -761,16 +755,7 @@
 											<li>
 												<div class="menu-list-item">
 													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Huevos revueltos, estrellados o en torta</a>
-													<!-- Price badge -->
-													{# <span class="pull-right">$9</span> #}
-													<div class="clearfix"></div>
-												</div>
-											</li>
-											<li>
-												<div class="menu-list-item">
-													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Agua de fruta natural</a>
+													<i class="fa fa-angle-right"></i> <a href="#">Agua de guayaba</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$9</span> #}
 													<div class="clearfix"></div>
@@ -842,15 +827,6 @@
 												<div class="menu-list-item">
 													<!-- Icon -->
 													<i class="fa fa-angle-right"></i> <a href="#">Pan dulce</a>
-													<!-- Price badge -->
-													{# <span class="pull-right">$</span> #}
-													<div class="clearfix"></div>
-												</div>
-											</li>
-											<li>
-												<div class="menu-list-item">
-													<!-- Icon -->
-													<i class="fa fa-angle-right"></i> <a href="#">Cocada brasileña</a>
 													<!-- Price badge -->
 													{# <span class="pull-right">$</span> #}
 													<div class="clearfix"></div>
@@ -1370,5 +1346,6 @@
 		  ga('send', 'pageview');
 
 		</script>
+		{{ function('wp_footer') }}
 	</body>	
 </html>
